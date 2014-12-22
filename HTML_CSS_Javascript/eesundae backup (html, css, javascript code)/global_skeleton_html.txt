@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+	
+    <head>
+	<link rel="stylesheet" type="text/css" href = "../../main/global.css"/>
+    <link rel="stylesheet" type="text/css" href = "../../main/local.css"/>
+    </head>
+	
+    <body>
+	
+    <div id="page">
+    
+    
+	
+	
+	<header>
+    head
+    <nav>nav</nav>
+    </header>
+    
+    
+    
+   <aside class = "left">
+    <ul class = "navigator">
+    <li><a href = "">Blog</a><span class="button" id="">a</span></li>
+    <li><a href = "">Tutorials</a><span class="button" id="button">b</span>
+      <ul id = "hidden">
+        <li><a href = "">EE Science 1</a></li>
+        <li><a href = "">EE Science 2</a></li>
+        <li><a href = "">Digital Design</a></li>
+        <li><a href = "">Linear Algebra</a></li>
+        
+      </ul>    
+    </li>
+    
+    <li><a href = "">About</a><span class="button" id="button">c</span></li>
+    <li><a href = "">Tutoring</a><span class="button" id="button">d</span></li>
+    <li><a href = "">Resources</a><span class="button" id="button">e</span></li>
+    
+    </ul>
+    </aside>
+    
+   
+   
+   
+   
+    <div class = "content">
+	article
+    <article>
+    </article>
+      <article>
+
+      </article> 
+    </div>
+    
+	
+	
+	
+	
+	
+	
+	<footer>hello</footer>    
+    
+    </div>
+   <script src="../../main/main.js">
+
+   </script>
+    </body>
+
+</html>

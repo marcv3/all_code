@@ -1,0 +1,116 @@
+/*  ##       ########     #######         ####       ##
+
+    ##       ##    ##    ##     ##       ##  ##      ##
+
+    ##       ##    ##   ##              ##    ##     ##
+
+    ##       ##    ##   ##             ##########    ##
+
+    ##       ##    ##    ##     ##    ##        ##   ##
+
+    ######   ########     #######    ##          ##  ########  */    
+
+
+
+/*HOME | MAIN PAGE*/
+
+
+
+
+
+
+
+/*BLOG | MAIN PAGE*/
+
+   /* #rect goes inside article of Blog Main Page */
+
+#blogRect {
+
+	border-bottom:solid 1px gray;
+
+	width:700px;
+
+	margin:20px 10px 20px 10px;
+
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+	}
+
+
+
+.timeStamp {
+
+	position:relative;
+
+	bottom:20px;
+
+	font-size:9px;
+
+	color:#C33
+
+	}
+
+
+
+/*TUTORIALS | MAIN PAGE */
+
+#tutorialRect {
+
+	border-bottom:5px solid #CCF ;
+
+	border-left:5px solid #CCF ;
+
+	float:left;
+
+	width:700px;
+
+	margin:20px 10px 20px 10px;
+
+	background:#F7F7F7;
+
+	border-radius:10px;
+	
+	padding:10px 10px 10px 10px;
+	
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+	}
+
+	
+
+	/*styling for the course name*/
+
+#courseName {
+
+	text-align:center;
+
+	display:block;
+
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+	}
+
+	
+
+#courseTopic li {
+
+	display:block;
+
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+	font-size:14px;
+
+	padding:1px;
+
+	}
+
+/*ABOUT | MAIN PAGE */
+
+
+
+/*TUTORING | MAIN PAGE */
+
+
+
+/*RESOURCES | MAIN PAGE */
+

@@ -1,0 +1,193 @@
+/*      ########  ##        ########  #######         ##        ##
+	##        ##        ##    ##  ##    ##      ## ##       ##
+	##        ##        ##    ##  ##   ##      ##   ##      ##
+	##  ####  ##        ##    ##  #######     #########     ##
+	##    ##  ##        ##    ##  ##    ##   ##       ##    ##
+	########  ########  ########  #######   ##         ##   ########
+*/
+
+
+
+/* WHOLE PAGE */
+
+	/* The #page identifier should remain UNTOUCHED!!! */
+	
+#page {
+	width:960px;
+	position:relative;
+	margin:0 auto;
+}
+
+
+
+
+/* HEADER */
+
+header {
+	margin:10px 10px 0px 10px;	
+	width:940px;
+	font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+	font-size:72px;
+	padding: 10px 0px 0px 10px;
+	text-indent:20px;
+	border-bottom:1px solid #3366CC;
+}
+
+/* CONTENT */
+
+	/* The .content is the global div container for the main content of every single page.
+	It represents the section of site-wide pages placed to the right of the sidebar and is
+	sandwiched between the header and footer. */
+.content{
+	float:left;
+	min-height:500px;
+	width:700px;
+	margin:10px 10px 10px 1px;
+	border-left:1px solid #3366CC;
+}
+
+/* ASIDE */
+
+	/* The .left is the global div container for the side bar located on the left hand 
+	side of every page site-wide.  This property will determine the style of the sidebar
+	NOT INCLUDING THE TEXT */
+.left{
+float:left;
+min-width:220px;
+height:500px;
+margin:10px;
+
+}
+
+
+
+
+
+/* start nav */
+
+.navigator{
+font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+text-decoration:none;
+list-style:none;
+padding-left:0;
+display:block;
+border-bottom:thin 1px #3366CC;
+}
+
+.navigator li ul{
+padding-left:0;
+
+}
+
+#hidden{
+display:none;
+}
+
+#hidden li a{
+width:190px;
+position:relative;
+left:10px;	
+}
+
+#hidden2{
+display:none;	
+}
+
+#hidden2 li a{
+width:160px;
+position:relative;
+left:20px;
+
+}
+
+.navigator li ul li{
+
+text-decoration:none;
+list-style:none;	
+}
+
+
+.navigator li ul li a{
+/*background-color:#EEE;*/	
+}
+
+.navigator li ul li a:hover{
+background-color:#33C;
+}
+
+.navigator li a{
+display:block;
+border-bottom:1px solid #3366CC;
+color:black;
+text-decoration:none;
+list-style:none;
+padding: 4px 0px 2px 0px;
+margin:0px;
+width:220px;
+z-index:10;
+
+}
+.navigator li a:hover{
+	background:#33C;
+	color:white;
+	
+	}
+
+	/* The .button class is for styling the div tag that contains
+	the 'plus' sign .png files in which the user may click on in 
+	the sidebar in order to access the drop down menu */
+.button {
+	/*border-bottom:1px solid #3366CC;*/
+	float:right;
+	width:20px;
+	position:relative;
+	bottom:26px;
+	text-align:center;
+	padding: 4px 0px 2px 0px;
+}
+
+
+.button2{
+	/*border-bottom:1px solid #3366CC;*/
+	float:right;
+	width:20px;
+	position:relative;
+	bottom:26px;
+	right:20px;
+	text-align:center;
+	padding: 4px 0px 2px 0px;
+	z-index:10;	
+}
+
+
+
+.button2:hover{
+	cursor:pointer;
+	background:#33C;
+	color:white;	
+}
+
+.button:hover {
+	cursor:pointer;
+	background:#33C;
+	color:white;
+	
+	
+	}
+
+#whiteBolt{
+	display:none;	
+}
+
+
+/* FOOTER */
+
+footer {
+	text-indent:20px;
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	clear:both;
+	background-color:black;
+	width:940px;
+	margin:10px;
+	color:white;
+}
