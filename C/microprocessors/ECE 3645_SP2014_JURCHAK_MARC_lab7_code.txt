@@ -1,0 +1,294 @@
+/*
+ * lab_7.c
+ *
+ * Created: 4/5/2014 8:56:10 PM
+ *  Author: Marc
+ */ 
+
+
+#include <avr/io.h>
+#include <avr/delay.h>// avr delay library
+void mili_delay (int mili_seconds);
+void staircase(int stair[8]);
+void blinky();
+void roll(int stair[8]);
+void odd();
+void even();
+
+int main(void)
+{
+	DDRD = 0xFF; // all PORTD is output
+	DDRB = 0x00; // all PORTB is input
+	int stair[8] = {0x01,0x02,0x04,0x08,0x10,0x20,0x40,0x80}; // array for staircase pattern for LEDs
+
+while(1){
+
+  if (PINB == 0xfe){ // if PINB receives 0xfe from dipswitches, run blinky
+	
+	blinky();
+  }
+  
+  if (PINB == 0xfd){ // if PINB receives 0xfd from dipswitches, run staircase
+	
+	staircase(stair);
+  }
+  
+  if(PINB == 0xfb){// if PINB receives 0xfb from dipswitches, run roll
+			
+    roll(stair); 
+  }
+  
+  if (PINB == 0xf7)// if PINB receives 0xf7 from dipswitches, run odd
+  {
+	odd();
+  }
+  
+  if (PINB == 0xef)// if PINB receives 0xef from dipswitches, run even
+  {
+	even();
+  }
+  if (PINB == 0xff)// if PINB receives 0xff from dipswitches, do nothing
+  {
+	PORTD = 0x00;  
+  }
+    }
+}
+
+
+void blinky(){ 
+		
+		PORTD = 0xFF; // all LEDs on 
+		mili_delay(1000); //delay 1 second
+		PORTD = 0x00; // all LEDs off
+        mili_delay(1000); //delay 1 second			
+}
+
+void staircase(int stair[8]){
+	for(int i=0; i<=7; i++){ // output stair array to PORTD, delaying 1 sec each light
+		mili_delay(1000);
+		PORTD = stair[i];
+	}
+}
+
+void roll(int stair[8]){
+	for(int i=0; i<=7; i++){ // output stair array to PORTD, delaying 1 sec each light
+		mili_delay(1000);
+		PORTD = stair[i];
+	}
+	for(int i=6; i>=1; i--){ // output stair array to PORTD in reverse, delaying 1 sec each light
+		mili_delay(1000);
+		PORTD = stair[i];
+	}
+}
+
+void odd(){
+		PORTD = 0x55; //odd LEDs on
+		mili_delay(2000); //delay 2 seconds
+		PORTD = 0x00; //all LEDs off
+		mili_delay(2000); //delay 2 seconds
+}
+
+void even(){
+		PORTD = 0xaa; //even LEDs on
+		mili_delay(2000);// delay 2 seconds
+		PORTD = 0x00;// all LEDs off
+		mili_delay(2000); // delay 2 seconds
+}
+
+void mili_delay (int mili_seconds){ // input value of milliseconds
+
+for(int i = 1 ; i <= mili_seconds ; i++ )
+	_delay_loop_2(1999); // 1 millisecond delay on 169P
+
+}
+
+
+
+
+
+// EXTRA CREDIT
+
+
+
+
+
+/*
+ * lab_7.c
+ *
+ * Created: 4/5/2014 8:56:10 PM
+ *  Author: Marc
+ */ 
+
+
+#include <avr/io.h>
+#include <avr/delay.h>// avr delay library
+void mili_delay (int mili_seconds); //function prototypes
+void micro_delay (int micro_seconds);
+void speaker_250_hz();
+void speaker_300_hz();
+void speaker_350_hz();
+void speaker_400_hz();
+void speaker_450_hz();
+void speaker_500_hz();
+
+
+int main(void)
+{
+	DDRD = 0xFF; // set as output
+	DDRB = 0xf0; // set pins 0 - 3 as input, 4 - 7 as output
+
+		
+while(1){
+
+  if (PINB == 0x0e){ // will execute if dipswitch 1 is pushed. 
+   	
+	for (int i = 1; i <= 750; i++) //ensures 3 seconds delay
+	{
+	  speaker_250_hz(); // calls function that controlls pitch
+	
+	}
+
+	for (int i = 1; i <= 500; i++) //ensures 1 seconds delay
+	{
+	  speaker_500_hz();// calls function that controlls pitch
+	}	  
+
+	 
+  }
+  
+  if (PINB == 0x0d){
+	for (int i = 1; i <= 250; i++) //ensures 1 seconds delay
+	{
+		speaker_250_hz();// calls function that controlls pitch
+		
+	}
+
+	for (int i = 1; i <= 1500; i++) //ensures 3 seconds delay
+	{
+		speaker_500_hz();// calls function that controlls pitch
+	}
+  }
+			  
+  if (PINB == 0x0b){
+
+	for (int i = 1; i <= 250; i++) //ensures 1 seconds delay
+	{
+		speaker_250_hz();// calls function that controlls pitch
+		
+	}
+
+	for (int i = 1; i <= 500; i++) //ensures 1 seconds delay
+	{
+		speaker_500_hz();// calls function that controlls pitch
+	}
+
+
+  }
+		  
+  if (PINB == 0x07){
+
+	for (int i = 1; i <= 250; i++) //ensures 1 seconds delay
+	{
+		speaker_250_hz();// calls function that controlls pitch		
+	}
+
+
+	for (int i = 1; i <= 300; i++) //ensures 1 seconds delay
+	{
+		speaker_300_hz();// calls function that controlls pitch
+	}
+
+
+	for (int i = 1; i <= 350; i++) //ensures 1 seconds delay
+	{
+		speaker_350_hz();// calls function that controlls pitch
+	}	
+
+
+	for (int i = 1; i <= 400; i++) //ensures 1 seconds delay
+	{
+		speaker_400_hz();// calls function that controlls pitch
+	}
+
+
+	for (int i = 1; i <= 450; i++) //ensures 1 seconds delay
+	{
+		speaker_450_hz();// calls function that controlls pitch
+	}
+
+
+	for (int i = 1; i <= 500; i++) //ensures 1 seconds delay
+	{
+		speaker_500_hz();// calls function that controlls pitch
+	}
+
+	  
+	  
+  }
+
+   
+    }
+}
+void speaker_250_hz(){
+	
+	PORTB = 0x20; // sets pin5 on PORTB to high
+	micro_delay(1100); // delays for 2ms
+	PORTB = 0x00; // sets pin5 on PORTB to low
+	micro_delay(1100); // delays for 2ms
+}
+
+void speaker_300_hz(){
+	
+	PORTB = 0x20;
+	micro_delay(915); //1665 microsecond delay
+	PORTB = 0x00;
+	micro_delay(915);
+}
+
+void speaker_350_hz(){
+	
+	PORTB = 0x20;
+	micro_delay(786); //1439 microsecond delay
+	PORTB = 0x00;
+	micro_delay(786);
+}
+
+void speaker_400_hz(){
+	
+	PORTB = 0x20;
+	micro_delay(688); //1250 microsecond delay
+	PORTB = 0x00;
+	micro_delay(688);
+}
+
+void speaker_450_hz(){
+	
+	PORTB = 0x20;
+	micro_delay(611); //1111 microsecond delay
+	PORTB = 0x00;
+	micro_delay(611);
+}
+
+void speaker_500_hz(){
+	
+	PORTB = 0x20;
+	micro_delay(550); //1 ms delay
+	PORTB = 0x00;
+	micro_delay(550);	
+}
+
+void mili_delay (int mili_seconds){ // this function delays for input length of miliseconds
+
+for(int i = 1 ; i <= mili_seconds ; i++ )
+	_delay_loop_2(1999);
+
+}
+
+void micro_delay (int micro_seconds){ // this function delays for input length of microseconds
+
+	for(int i = 1 ; i <= micro_seconds ; i++ )
+	_delay_loop_2(2);
+
+}
+
+
